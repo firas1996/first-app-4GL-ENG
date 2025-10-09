@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, computed, Input, input } from '@angular/core';
+
+interface User {
+  id: number;
+  name: string;
+  avatar: string;
+}
 
 @Component({
   selector: 'app-user-card',
@@ -7,7 +13,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user-card.css',
 })
 export class UserCard {
-  @Input({ required: true }) id!: number;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) id!: number;
+  // @Input({ required: true }) name!: string;
+  // @Input({ required: true }) avatar!: string;
+  // id = input.required<number>();
+  // name = input.required<string>();
+  // avatar = input.required<string>();
+  user = input.required<User>();
+  imgPath = computed(() => '/users/' + this.user().avatar);
 }
