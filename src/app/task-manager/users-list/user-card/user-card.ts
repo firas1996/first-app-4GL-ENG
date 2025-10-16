@@ -1,10 +1,5 @@
 import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
-
-interface User {
-  id: number;
-  name: string;
-  avatar: string;
-}
+import { User } from './user.model';
 
 @Component({
   selector: 'app-user-card',
@@ -20,9 +15,9 @@ export class UserCard {
   // name = input.required<string>();
   // avatar = input.required<string>();
   user = input.required<User>();
-  selectedUserId = output<number>();
+  selectedUser = output<User>();
   imgPath = computed(() => '/users/' + this.user().avatar);
   onClickUser() {
-    this.selectedUserId.emit(this.user().id);
+    this.selectedUser.emit(this.user());
   }
 }

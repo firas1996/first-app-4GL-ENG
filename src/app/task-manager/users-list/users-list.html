@@ -1,6 +1,6 @@
 <!-- <div> -->
     @for(user of users; track user.id) {
-        <app-user-card (selectedUserId)="getSelectedUser($event)" [user]="user" />
+        <app-user-card (selectedUser)="getSelectedUser($event)" [user]="user"></app-user-card>
     }
     <!-- <app-user-card [id]="users[1].id" [avatar]="users[1].avatar" [name]="users[1].name" />
     <app-user-card [id]="users[2].id" [avatar]="users[2].avatar" [name]="users[2].name" />

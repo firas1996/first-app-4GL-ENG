@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { USERS } from './users-data';
 import { UserCard } from './user-card/user-card';
+import { User } from './user-card/user.model';
 
 @Component({
   selector: 'app-users-list',
@@ -10,7 +11,7 @@ import { UserCard } from './user-card/user-card';
 })
 export class UsersList {
   users = USERS;
-  getSelectedUser(id: number) {
-    console.log(id);
+  getSelectedUser(user: User) {
+    console.log(user);
   }
 }
