@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { USERS } from './users-data';
 import { UserCard } from './user-card/user-card';
 import { User } from './user-card/user.model';
@@ -11,7 +11,8 @@ import { User } from './user-card/user.model';
 })
 export class UsersList {
   users = USERS;
+  theUser = output<User>();
   getSelectedUser(user: User) {
-    console.log(user);
+    this.theUser.emit(user);
   }
 }
