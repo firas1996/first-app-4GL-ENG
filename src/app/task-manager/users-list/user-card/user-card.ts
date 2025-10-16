@@ -1,4 +1,4 @@
-import { Component, computed, Input, input } from '@angular/core';
+import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
 
 interface User {
   id: number;
@@ -20,5 +20,9 @@ export class UserCard {
   // name = input.required<string>();
   // avatar = input.required<string>();
   user = input.required<User>();
+  selectedUserId = output<number>();
   imgPath = computed(() => '/users/' + this.user().avatar);
+  onClickUser() {
+    this.selectedUserId.emit(this.user().id);
+  }
 }

@@ -10,4 +10,7 @@ import { UserCard } from './user-card/user-card';
 })
 export class UsersList {
   users = USERS;
+  getSelectedUser(id: number) {
+    console.log(id);
+  }
 }
