@@ -10,7 +10,7 @@ import { Tasks } from './tasks/tasks';
   styleUrl: './task-manager.css',
 })
 export class TaskManager {
-  user?: User;
+  user!: User;
   getSelectedUser(user: User) {
     this.user = user;
   }
