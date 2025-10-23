@@ -1,19 +1,20 @@
 import { Component, input } from '@angular/core';
 import { User } from '../users-list/user-card/user.model';
 import { TASKS } from './tasks-data';
+import { Task } from './task/task';
 
 @Component({
   selector: 'app-tasks',
-  imports: [],
+  imports: [Task],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })
 export class Tasks {
-  user = input.required<User>();
+  user = input<User>();
   tasks = TASKS;
   get selectedUserTasks() {
     return this.tasks.filter((task) => {
-      return task.userId == this.user().id;
+      return task.userId == this.user()?.id;
     });
   }
 }
