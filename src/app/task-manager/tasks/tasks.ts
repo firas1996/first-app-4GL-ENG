@@ -17,4 +17,7 @@ export class Tasks {
       return task.userId == this.user()?.id;
     });
   }
+  onTaskComplete(taskId: Number) {
+    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  }
 }
