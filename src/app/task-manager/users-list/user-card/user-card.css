@@ -7,7 +7,7 @@ div{
     align-items: center;
     border-radius: 12px;
 }
-div:hover{
+div:hover, .active{
     background-color: #4E56C0;
     cursor: pointer;
 }

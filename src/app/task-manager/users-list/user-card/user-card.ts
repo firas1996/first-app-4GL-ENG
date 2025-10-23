@@ -15,9 +15,11 @@ export class UserCard {
   // name = input.required<string>();
   // avatar = input.required<string>();
   user = input.required<User>();
-  selectedUser = output<User>();
+  selectedUserId = output<Number>();
+  isSelected = input<boolean>();
   imgPath = computed(() => '/users/' + this.user().avatar);
   onClickUser() {
-    this.selectedUser.emit(this.user());
+    this.selectedUserId.emit(this.user().id);
+    // console.log(this.user());
   }
 }

@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { USERS } from './users-data';
 import { UserCard } from './user-card/user-card';
 import { User } from './user-card/user.model';
@@ -11,8 +11,13 @@ import { User } from './user-card/user.model';
 })
 export class UsersList {
   users = USERS;
+  abc = signal<Number | null>(null);
   theUser = output<User>();
-  getSelectedUser(user: User) {
-    this.theUser.emit(user);
+  selectedUser = computed(() => {
+    return this.users.find((user) => user.id == this.abc());
+  });
+  getSelectedUser(userId: Number) {
+    this.abc.set(userId);
+    this.theUser.emit(this.selectedUser()!);
   }
 }

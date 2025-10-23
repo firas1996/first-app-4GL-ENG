@@ -1,4 +1,4 @@
-<div (click)="onClickUser()">
+<div [class.active]="isSelected()" (click)="onClickUser()">
     <img [src]="imgPath()" />
     <span>{{user().name}}</span>
 </div>
