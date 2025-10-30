@@ -2,10 +2,11 @@ import { Component, input } from '@angular/core';
 import { User } from '../users-list/user-card/user.model';
 import { TASKS } from './tasks-data';
 import { Task } from './task/task';
+import { AddTask } from './add-task/add-task';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task],
+  imports: [Task, AddTask],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })

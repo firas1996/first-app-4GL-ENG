@@ -1,5 +1,9 @@
+<app-add-task></app-add-task>
 <section>
+    <div>
     <h2>{{user()?.name == null ?'Pls select a user !!' : user()?.name}}</h2>
+    <button>Add Task</button>
+    </div>
     @for(task of selectedUserTasks;track task.id){
         <app-task [taskData]="task" (taskId)="onTaskComplete($event)" />
     }

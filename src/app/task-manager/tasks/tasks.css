@@ -1,0 +1,14 @@
+div{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+button{
+    background-color: darkblue;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
