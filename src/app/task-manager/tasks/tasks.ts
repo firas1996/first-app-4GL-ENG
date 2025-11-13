@@ -13,6 +13,7 @@ import { AddTask } from './add-task/add-task';
 export class Tasks {
   user = input<User>();
   tasks = TASKS;
+  isAddingTask = false;
   get selectedUserTasks() {
     return this.tasks.filter((task) => {
       return task.userId == this.user()?.id;
@@ -20,5 +21,8 @@ export class Tasks {
   }
   onTaskComplete(taskId: Number) {
     this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  }
+  formStateHandler() {
+    this.isAddingTask = !this.isAddingTask;
   }
 }

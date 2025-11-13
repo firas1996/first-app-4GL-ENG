@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-task',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './add-task.html',
-  styleUrl: './add-task.css'
+  styleUrl: './add-task.css',
 })
 export class AddTask {
-
+  handelForm = output<void>();
+  onSubmit() {
+    this.handelForm.emit();
+  }
+  onClose() {
+    this.handelForm.emit();
+  }
 }
