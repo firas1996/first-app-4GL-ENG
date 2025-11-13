@@ -25,6 +25,7 @@ export class Tasks {
   formStateHandler() {
     this.isAddingTask = !this.isAddingTask;
   }
+  //
   onAddTask(taskData: { title: string; desc: string; date: string }) {
     this.tasks.push({
       id: new Date().getTime(),
