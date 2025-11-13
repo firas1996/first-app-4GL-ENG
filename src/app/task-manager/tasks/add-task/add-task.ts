@@ -9,7 +9,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddTask {
   handelForm = output<void>();
+  add = output<{ title: string; desc: string; date: string }>();
+  entredTitle = '';
+  entredDesc = '';
+  entredDate = '';
   onSubmit() {
+    this.add.emit({
+      title: this.entredTitle,
+      desc: this.entredDesc,
+      date: this.entredDate,
+    });
     this.handelForm.emit();
   }
   onClose() {

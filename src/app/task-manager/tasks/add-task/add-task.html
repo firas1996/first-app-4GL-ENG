@@ -4,15 +4,15 @@
     <form (submit)="onSubmit()">
         <div>
             <label>Title</label>
-            <input placeholder="aaaaa" />
+            <input id="title" name="title" [(ngModel)]="entredTitle" />
         </div>
         <div>
             <label>Description</label>
-            <textarea rows="7"></textarea>
+            <textarea id="description" name="description" [(ngModel)]="entredDesc" rows="7"></textarea>
         </div>
         <div>
-            <label>Title</label>
-            <input type="date" />
+            <label>Date</label>
+            <input id="date" name="date" [(ngModel)]="entredDate" type="date" />
         </div>
         <div class="actions">
             <button type="button" (click)="onClose()">Cancel</button>

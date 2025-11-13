@@ -1,10 +1,12 @@
 @if(isAddingTask){
-    <app-add-task (handelForm)="formStateHandler()" />
+    <app-add-task (handelForm)="formStateHandler()" (add)="onAddTask($event)" />
 }
 <section>
     <div>
     <h2>{{user()?.name == null ?'Pls select a user !!' : user()?.name}}</h2>
-    <button (click)="formStateHandler()">Add Task</button>
+    @if(user()?.name){
+        <button (click)="formStateHandler()">Add Task</button>
+    }
     </div>
     @for(task of selectedUserTasks;track task.id){
         <app-task [taskData]="task" (taskId)="onTaskComplete($event)" />
